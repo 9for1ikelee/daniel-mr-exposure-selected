@@ -5,13 +5,12 @@
 # ============================================================================
 
 rm(list=ls())
-options(ieugwasr_jwt = Sys.getenv("IEUGWASR_JWT"))
 if(!require("pacman")) install.packages("pacman", update=F, ask=F)
 options(BioC_mirror="https://mirrors.ustc.edu.cn/bioc/")
 library("pacman")
 p_load(data.table, tidyr, dplyr, purrr, readr, vroom,
        MendelianRandomization, MRPRESSO)
-p_load_gh("mrcieu/gwasglue", "MRCIEU/TwoSampleMR")
+p_load_gh("MRCIEU/TwoSampleMR")
 library(TwoSampleMR)
 library(MendelianRandomization)
 
