@@ -1,7 +1,7 @@
 # ============================================================================
-# 两样本孟德尔随机化：GALNT2 → NSCLC
-# 暴露：GALNT2 pQTL (PROT-a-1171, GRCh37)
-# 结局：NSCLC (FinnGen R12 C3_LUNG_NONSMALL_EXALLC, GRCh38)
+# 两样本孟德尔随机化：exposure → outcome
+# 暴露：exposure pQTL (PROT-a-1171, GRCh37)
+# 结局：outcome (FinnGen outcome, GRCh38)
 # ============================================================================
 
 rm(list=ls())
@@ -17,7 +17,7 @@ library(MendelianRandomization)
 setwd("/Users/muu/Desktop/ai-test")
 
 cat("\n========================================\n")
-cat("  GALNT2 -> NSCLC MR Analysis\n")
+cat("  exposure -> outcome MR Analysis\n")
 cat("========================================\n\n")
 
 # ====== Step 1: 读取用户筛选的暴露IV ======
@@ -54,7 +54,7 @@ expo_MR <- read_exposure_data("clean_confounder07.csv",
   other_allele_col="other_allele.exposure",
   eaf_col="eaf.exposure", pval_col="pval.exposure",
   samplesize_col="samplesize.exposure", clump=F)
-expo_MR$exposure <- "GALNT2"
+expo_MR$exposure <- "exposure"
 
 outco_MR <- read_outcome_data(
   snps=expo_MR$SNP,
@@ -62,7 +62,7 @@ outco_MR <- read_outcome_data(
   sep=",", snp_col="SNP", beta_col="BETA", se_col="SE",
   effect_allele_col="effect_allele", other_allele_col="other_allele",
   eaf_col="EAF", pval_col="P", chr_col="CHR", pos_col="BP")
-outco_MR$outcome <- "NSCLC"
+outco_MR$outcome <- "outcome"
 
 # 基因组版本对齐 (GRCh37 vs GRCh38)
 pos_map <- expo_user[, .(SNP, chr.exposure, pos.exposure)]

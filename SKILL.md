@@ -1,6 +1,6 @@
 ---
 name: daniel-mr-exposure-selected
-description: Run two-sample Mendelian Randomization (GALNT2 pQTL as exposure, FinnGen NSCLC as outcome) using user-selected exposure IVs from a pre-cleaned confounder file. Use when the user has already curated their own clean_confounder07.csv SNP list and needs to run the full MR pipeline matching against FinnGen GWAS data, including harmonisation, MR analysis (IVW, MR-Egger, weighted median), sensitivity tests (heterogeneity, pleiotropy, MR-PRESSO, leave-one-out), and visualization (scatter, forest, funnel, leave-one-out, custom bioForest plot).
+description: Run two-sample Mendelian Randomization (exposure pQTL against a FinnGen outcome) using user-selected exposure IVs from a pre-cleaned confounder file. Use when the user has already curated their own clean_confounder07.csv SNP list and needs to run the full MR pipeline matching against FinnGen GWAS data, including harmonisation, MR analysis (IVW, MR-Egger, weighted median), sensitivity tests (heterogeneity, pleiotropy, MR-PRESSO, leave-one-out), and visualization (scatter, forest, funnel, leave-one-out, custom bioForest plot).
 ---
 
 # Daniel MR - Exposure Selected
@@ -11,7 +11,7 @@ Two-sample Mendelian Randomization using a user-provided, pre-cleaned confounder
 
 - R packages: TwoSampleMR, MendelianRandomization, MRPRESSO, data.table, dplyr, tidyr, vroom, pacman
 - Exposure file: clean_confounder07.csv (user-curated IVs after confounder screening)
-- Outcome file: finngen_R12_C3_LUNG_NONSMALL_EXALLC.gz (FinnGen R12 NSCLC GWAS)
+- Outcome file: finngen_R12_C3_LUNG_NONSMALL_EXALLC.gz (FinnGen outcome GWAS)
 
 ## Workflow
 
