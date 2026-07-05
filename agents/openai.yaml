@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daniel MR Exposure Selected"
+  short_description: "Run two-sample MR with user-selected exposure IVs"
+  default_prompt: "Use $daniel-mr-exposure-selected to run two-sample Mendelian Randomization using the exposure IVs in clean_confounder07.csv and the FinnGen outcome data"
